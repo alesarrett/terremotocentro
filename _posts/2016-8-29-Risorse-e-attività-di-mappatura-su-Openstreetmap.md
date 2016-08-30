@@ -14,9 +14,15 @@ Il coordinamento dei volontari avviene tramite la piattaforma [OSM Tasking Manag
 * [Amatrice: Post-earthquake imagery](http://osmit-tm.wmflabs.org/project/14), per la valutazione dei danni del terremoto nell'abitato di Amatrice
 * [Copernicus assessment](http://osmit-tm.wmflabs.org/project/15), per aggiornare Openstreetmap con le informazioni prodotte da Copernicus EMS sulla valutazione dei danni in tutta l'area del terremoto
 
-Quest'ultimo in questo momento è quello probabilmente più attuale, in quanto i dati pubblicati da Copernicus EMS sul terremoto ([EMRS177 Earthquake in Central Italy](http://emergency.copernicus.eu/EMSR177)) sono separati per mappa di rilevazione e quindi fortemente frammentati.
+Quest'ultimo in questo momento è quello più attivo e attuale, in quanto i dati pubblicati da Copernicus EMS sul terremoto ([EMRS177 Earthquake in Central Italy](http://emergency.copernicus.eu/EMSR177)) sono separati per mappa di rilevazione e quindi fortemente frammentati.
 
-I dati sono stati uniti in un unico shapefile ed è stato creato un [servizio WMS](http://osmit3.wmflabs.org/cgi-bin/qgis_mapserv.fcgi?map=/srv/Copernicus/settlements_grading.qgs&SERVICE=WMS&REQUEST=GetCapabilities&VERSION=1.3) da usare come riferimento. La legenda è [questa](http://imgur.com/a/cfOfA).
+A partire dai dati di Copernicus EMS, sono stati creati 3 servizi WMS:
+
+* WMS contenente i layer vettoriali di valutazione del danno su edifici e strade: [http://osmit3.wmflabs.org/cgi-bin/qgis_mapserv.fcgi?map=/srv/Copernicus/settlements_grading.qgs&SERVICE=WMS&REQUEST=GetCapabilities&VERSION=1.3](http://osmit3.wmflabs.org/cgi-bin/qgis_mapserv.fcgi?map=/srv/Copernicus/settlements_grading.qgs&SERVICE=WMS&REQUEST=GetCapabilities&VERSION=1.3);
+* WMS contenente tutte le immagini aeree più aggiornate prodotte (escluse quelli descritte al punto successivo): [http://osmit3.wmflabs.org/cgi-bin/qgis_mapserv.fcgi?SERVICE=WMS&MAP=/srv/geotiff/geotiffs_merged.qgs&REQUEST=GetCapabilities](http://osmit3.wmflabs.org/cgi-bin/qgis_mapserv.fcgi?SERVICE=WMS&MAP=/srv/geotiff/geotiffs_merged.qgs&REQUEST=GetCapabilities)
+* WMS contenente tutte le immagini aeree più aggiornate prodotte per i centri abitati, a risoluzione molto elevata: [http://osmit3.wmflabs.org/cgi-bin/qgis_mapserv.fcgi?SERVICE=WMS&MAP=/srv/geotiff/geotiffs_aerial_merged.qgs&REQUEST=GetCapabilities](http://osmit3.wmflabs.org/cgi-bin/qgis_mapserv.fcgi?SERVICE=WMS&MAP=/srv/geotiff/geotiffs_aerial_merged.qgs&REQUEST=GetCapabilities).
+
+[In questo documento](https://github.com/emergenzeHack/terremotocentro_geodata/blob/gh-pages/copernicus/r05/elaborazione_dati.md) sono contenute informazioni di dettagli sulle modalità di elaborazione dei dati.
 
 ##  Dati Openstreetmap aggiornati
 
@@ -28,4 +34,4 @@ Per scaricare il file _.pbf_ relativo sta qui: [http://geoserver.protezionecivil
 
 ## Altri dati geografici
 
-I dati geografici relativi al terremoto verranno archiviati in un [repository specifico in GitHub](https://github.com/emergenzeHack/terremotocentro_geodata)
+I dati geografici relativi al terremoto sono archiviati in un [repository specifico in GitHub](https://github.com/emergenzeHack/terremotocentro_geodata)
