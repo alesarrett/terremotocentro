@@ -3,10 +3,18 @@ layout: page
 title: Alloggi
 permalink: /alloggi/
 ---
+
+<div class="panel-group">
 {% for member in site.data.alloggi %}
+
+{% assign memberId = member.Descrizione|slugify|truncate:20,"" %}
+{% capture memberUrl %}{{site.url}}{{page.url}}#{{memberId}}{% endcapture %}
+{% capture twittershareUrl %}https://twitter.com/intent/tweet?text={{member.Descrizione|truncate:50|uri_escape}}&hashtags=terremotocentroitalia,alloggio&url={{memberUrl|uri_escape}}{% endcapture %}
+{% capture fbshareUrl %}http://www.facebook.com/share.php?u={{memberUrl|uri_escape}}&title=member.Descrizione{% endcapture %}
+
 <div class="panel panel-info">
-<div class="panel-heading">
-{{member.Descrizione}}
+<div class="panel-heading" id="{{memberId}}">
+{{member.Descrizione|strip_newlines}}
 </div>
 <div class="panel-body">
 {% if member.Dove %}
@@ -28,14 +36,36 @@ permalink: /alloggi/
 
 {% if member.Link %}
 <div class="row">
-<div class="col-md-2"><b>Link:</b></div><a href="{{member.Link}}">{{member.Link}}</a>
+<div class="col-md-2"><b>Link:</b></div><div class="col-md-10"><a href="{{member.Link}}">Twitter</a></div>
 </div>
 {% endif %}
 <div class="row">
 </div>
 </div>
+<div class="panel-footer">
+<div class="row">
+<div class="col-md-1"><a href="{{memberUrl}}">Link</a></div>
+<div class="col-md-1">
+            <a href="{{fbshareUrl}}" title="Twitter">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+</div>
+<div class="col-md-1">
+            <a href="{{twittershareUrl}}" title="Twitter">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+
+</div>
+</div>
 </div>
 {% endfor %}
+</div>
 
 <div class="posts">
   {% for post in site.posts %}

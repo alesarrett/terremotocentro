@@ -21,16 +21,20 @@ description: Un progetto per informare sul terremoto del 24 Agosto 2016
 
 # List of links in the navigation bar
 navbar-links:
-  Aggiornamenti: "post"
-  Bollettino: "bollettino"
-  Link utili: "link_utili"
+  Aggiornamenti:
+    - Bollettino: "bollettino"
+    - Blog: "post"
+  Hai bisogno?:
+    - Segnala: "aiuto"
+    - Alloggi: "alloggi"
+    - Vittime: "vittime"
+    - Link utili: "link_utili"
   Mappe: "mappe"
-  Alloggi: "alloggi"
   Vuoi donare?: "donazioni"
-  Hai bisogno?: "aiuto"
-  #Vittime: "vittime"
-  WIKI: 'https://github.com/emergenzeHack/terremotocentro/wiki" target="_blank'
-  About: "about"
+  Il Progetto:
+   - About: "about"
+   - WIKI: 'https://github.com/emergenzeHack/terremotocentro/wiki" target="_blank'
+   - Press: "press"
 
 # Image to show in the navigation bar - image must be a square (width = height)
 # Remove this parameter if you don't want an image in the navbar
@@ -55,6 +59,7 @@ author:
   youtube: yourlink # eg. user/daattali or channel/daattali
   rss: https://emergenzehack.github.io/terremotocentro/feed.xml
   telegram: https://telegram.me/terremotocentroitalia
+  medium: https://medium.com/terremotocentroitalia
 
 # Select which links to show in the footer
 footer-links-active:
@@ -69,6 +74,7 @@ footer-links-active:
   instagram: true
   youtube: false
   telegram: true
+  medium: true
 
 # Select which share links to show in posts
 share-links-active:
@@ -84,7 +90,7 @@ share-links-active:
 # --- Misc --- #
 
 # Fill in your Disqus shortname (NOT the userid) if you want to support Disqus comments
-#disqus: ""
+disqus: "terremotocentroitalia"
 
 # Fill in your Google Analytics ID to track your website using GA
 google_analytics: "UA-47474515-3"
@@ -116,7 +122,7 @@ defaults:
       path: "" # all files
     values:
       layout: "page"
-      show-avatar: false
+      show-avatar: true
 
 # Use tags pages (not recommended if you are deploying via GitHub pages, only set to true if deploying locally with ruby)
 link-tags: false
